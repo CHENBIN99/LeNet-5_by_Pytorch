@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -6,11 +7,11 @@ class LeNet(nn.Module):
     def __init__(self):
         super(LeNet, self).__init__()
         # 第一层卷积
-        self.conv_1 = nn.Conv2d(3, 6, (5, 5), stride=1, padding=0)
+        self.conv_1 = nn.Conv2d(3, 6, (5, 5), stride=1, padding=2)
         # 第二层池化
         self.pool_1 = nn.AvgPool2d(kernel_size=(2, 2), stride=2, padding=0)
         # 第三层卷积
-        self.conv_2 = nn.Conv2d(6, 16, (5, 5), stride=1, padding=0)
+        self.conv_2 = nn.Conv2d(6, 16, (5, 5), stride=1, padding=2)
         # 第四层池化
         self.pool_2 = nn.AvgPool2d(kernel_size=(2, 2), stride=2, padding=0)
         # 第七层全连接
